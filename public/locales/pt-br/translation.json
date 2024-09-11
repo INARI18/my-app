@@ -1,0 +1,33 @@
+{
+    "header": {
+        "title": "Título"
+    },
+
+    "navbar": {
+        "home": "Início",
+        "form": "Formulário",
+        "about": "Sobre",
+        "contact": "Contato"
+    },
+
+    "footer": {
+        
+    },
+
+    "form": {
+        "title_form": "Formulário",
+        "name": "Nome:",
+        "birthday": "Data de nascimento:",
+        "cpf": "CPF:",
+        "avatar": "Avatar",
+        "submit": "Enviar"
+    },
+
+    "placeholder": {
+        "full_name": "Nome completo"
+    },
+
+    "home_page": {
+         
+    }
+}

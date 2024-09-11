@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Header from '../../components/header/header';
+import Layout from '../../components/layout/layout';
 import styles from './form.module.css';
-import Footer from '../../components/footer/footer'
+import { useTranslation } from 'react-i18next';
 
 export default function Form() {
     const [name, setName] = useState('');
@@ -9,6 +9,7 @@ export default function Form() {
     const [cpf, setCpf] = useState('');
     const [image, setImage] = useState('');
     const [output, setOutput] = useState('');
+    const { t } = useTranslation();
 
     function createUser(data: any) {
         setOutput(JSON.stringify(data, null, 2));
@@ -65,21 +66,20 @@ export default function Form() {
     };
 
     return (
-        <main className={styles.container}>
-            <Header />
+        <div className={styles.container}>
             <div className={styles.formOutputContainer}>
                 <form onSubmit={handleSubmit} className={styles.form}>
-                    <h1 className={styles.title}>FORM</h1>
+                    <h1 className={styles.title}>{t('form.title_form')}</h1>
 
                     {/* NAME */}
                     <div className={styles.fieldContainer}>
-                        <label htmlFor="name" className={styles.label}>Name:</label>
+                        <label htmlFor="name" className={styles.label}>{t('form.name')}</label>
                         <input
                             type="text"
                             id="name"
                             name="name"
                             value={name}
-                            placeholder="Full Name here"
+                            placeholder={t('placeholder.full_name')}
                             onChange={(e) => setName(e.target.value)}
                             className={styles.input}
                         />
@@ -87,7 +87,7 @@ export default function Form() {
 
                     {/* BIRTHDAY */}
                     <div className={styles.fieldContainer}>
-                        <label htmlFor="birthday" className={styles.label}>Birthday:</label>
+                        <label htmlFor="birthday" className={styles.label}>{t('form.birthday')}</label>
                         <input
                             type="text"
                             id="birthday"
@@ -101,12 +101,12 @@ export default function Form() {
 
                     {/* CPF */}
                     <div className={styles.fieldContainer}>
-                        <label htmlFor="cpf" className={styles.label}>CPF:</label>
+                        <label htmlFor="cpf" className={styles.label}>{t('form.cpf')}</label>
                         <input
                             type="text"
                             id="cpf" name="cpf"
                             value={cpf}
-                            placeholder="XXX.XXX.XXX-XX"
+                            placeholder="000.000.000-00"
                             onChange={(e) => setCpf(e.target.value)}
                             className={styles.input}
                         />
@@ -114,7 +114,7 @@ export default function Form() {
 
                     {/* IMAGE UPLOAD */}
                     <div className={styles.fieldContainer}>
-                        <label htmlFor="image" className={styles.label}>Image:</label>
+                        <label htmlFor="image" className={styles.label}>{t('form.avatar')}</label>
                         <input
                             type="file"
                             id="image"
@@ -125,7 +125,7 @@ export default function Form() {
                     </div>
 
                     {/* BUTTON */}
-                    <button className={styles.button} type="submit">Submit</button>
+                    <button className={styles.button} type="submit">{t('form.submit')}</button>
                 </form>
 
                 {/* HIDE STYLE WHILE EMPTY */}
@@ -133,7 +133,6 @@ export default function Form() {
                     <pre className={styles.output}>{output}</pre>
                 )}
             </div>
-            <Footer />
-        </main>
+        </div >
     );
 }

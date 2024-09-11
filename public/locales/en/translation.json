@@ -1,0 +1,33 @@
+{
+    "header": {
+        "title": "Title"
+    },
+
+    "navbar": {
+        "home": "Home",
+        "form": "Form",
+        "about": "About",
+        "contact": "Contact"
+    },
+
+    "footer": {
+
+    },
+
+    "form": {
+        "title_form": "Form",
+        "name": "Name:",
+        "birthday": "Birthday:",
+        "cpf": "CPF:",
+        "avatar": "Avatar",
+        "submit": "Submit"
+    },
+
+    "placeholder": {
+        "full_name": "Full Name Here"
+    },
+
+    "home_page": {
+         
+    }
+}
